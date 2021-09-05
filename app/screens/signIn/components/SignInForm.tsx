@@ -18,10 +18,13 @@ export default function SignInForm({onLogin}: Props) {
 
   const checkFormCredentials = () => {
     if (!email?.length) {
-      sethasPasswordError('password required');
-    } else if (!password?.length) {
       sethasEmailError('e-mail required');
-    } else {
+    }
+    if (!password?.length) {
+      sethasPasswordError('password required');
+    }
+
+    if (email?.length && password?.length) {
       onLogin(email, password);
     }
   };
