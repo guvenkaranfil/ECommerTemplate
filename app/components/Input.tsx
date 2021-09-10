@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput, TextInputProps} from 'react-native';
+import {TextInput, TextInputProps, StyleSheet} from 'react-native';
 
 interface InputProps extends TextInputProps {
   value: string;
@@ -7,5 +7,23 @@ interface InputProps extends TextInputProps {
 }
 
 export default function Input({value, onChangeText, ...rest}: InputProps) {
-  return <TextInput value={value} onChangeText={onChangeText} {...rest} />;
+  return (
+    <TextInput
+      style={styles.input}
+      placeholderTextColor="#3C3C43"
+      value={value}
+      onChangeText={onChangeText}
+      {...rest}
+    />
+  );
 }
+
+const styles = StyleSheet.create({
+  input: {
+    paddingHorizontal: 5,
+    height: 40,
+    borderWidth: 0.5,
+    borderColor: '#3C3C43',
+    borderRadius: 5,
+  },
+});
