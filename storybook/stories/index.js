@@ -1,2 +1,2 @@
 import './button/button.stories';
-import './Welcome/Welcome.stories';
+import './input/input.stories';
